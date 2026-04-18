@@ -11,12 +11,15 @@
 
 <body>
 
-<div class="navbar">
+<nav class="navbar">
 
   <div class="logo">
-    <img src="images/logo.jpeg" alt="Logo">
+    <img src="images/parlour1.png" alt="logo">
     <span>Reya's</span>
   </div>
+
+  <!-- HAMBURGER -->
+  <div class="menu-toggle">☰</div>
 
   <ul class="nav-links">
     <li><a href="home.php">Home</a></li>
@@ -27,4 +30,18 @@
     <li><a href="contact.php">Contact</a></li>
   </ul>
 
-</div>
+</nav>
+</body>
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav-links");
+
+toggle.onclick = () => {
+  nav.classList.toggle("active");
+};
+
+window.addEventListener("scroll", () => {
+  document.querySelector(".navbar")
+    .classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
