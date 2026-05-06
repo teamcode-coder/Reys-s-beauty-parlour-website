@@ -1,98 +1,54 @@
 <?php include('header.php'); ?>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero">
     <div class="hero-content">
-        <h1>Welcome to Reya's Beauty Lounge</h1>
-        <p>Professional beauty and salon services designed to make you feel confident and beautiful. Experience luxury treatments with our certified experts.</p>
+        <h1>Reveal Your Natural Radiance</h1>
+        <p>Premium beauty treatments and wellness services tailored for your unique glow. Experience luxury at Reya's Beauty Lounge.</p>
         <div class="cta-buttons">
-            <a href="booking.php" class="btn-primary">Book an Appointment</a>
-            <a href="package.php" class="btn-secondary">Explore Packages</a>
+            <a href="booking.php" class="btn btn-primary">Book Appointment</a>
+            <a href="service.php" class="btn btn-outline">Explore Services</a>
         </div>
     </div>
 </section>
 
-<!-- FEATURES SECTION -->
-<section class="features-section">
-    <div class="features-container">
-        <h2 class="section-title">Why Choose Reya's Beauty Lounge?</h2>
+<!-- WHY CHOOSE US -->
+<section class="features">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Us</h2>
+            <p>We combine expertise with premium products to deliver an unmatched beauty experience.</p>
+        </div>
+        
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-crown"></i>
-                </div>
-                <h3>Premium Services</h3>
-                <p>Experience luxury beauty treatments with the latest techniques and premium products for exceptional results.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-certificate"></i>
-                </div>
+                <div class="feature-icon"><i class="fas fa-certificate"></i></div>
                 <h3>Certified Experts</h3>
-                <p>Our team consists of professionally trained and certified beauty experts with years of experience.</p>
+                <p>Our team consists of highly trained professionals with years of industry experience.</p>
             </div>
+            
             <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-spa"></i>
-                </div>
-                <h3>Hygienic Environment</h3>
-                <p>We maintain the highest standards of cleanliness and hygiene for your safety and comfort.</p>
+                <div class="feature-icon"><i class="fas fa-sparkles"></i></div>
+                <h3>Premium Products</h3>
+                <p>We exclusively use high-end, skin-friendly products for all our treatments.</p>
             </div>
+            
             <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-tag"></i>
-                </div>
-                <h3>Affordable Pricing</h3>
-                <p>Premium quality beauty services at reasonable prices without compromising on quality.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-users"></i>
-                </div>
+                <div class="feature-icon"><i class="fas fa-heart"></i></div>
                 <h3>Personalized Care</h3>
-                <p>We tailor our services to meet your individual needs and preferences.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <h3>Customer Satisfaction</h3>
-                <p>Your satisfaction is our priority. We go the extra mile to exceed your expectations.</p>
+                <p>Every service is customized to meet your specific beauty goals and preferences.</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section style="padding: 100px 0; background-color: var(--accent); color: var(--text-dark); text-align: center;">
+    <div class="container">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready for a Transformation?</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 30px;">Step into a world of beauty and relaxation today.</p>
+        <a href="booking.php" class="btn btn-primary">Make an Appointment</a>
     </div>
 </section>
 
 <?php include('footer.php'); ?>
-
-
-
-<script>
-
-/* INTRO HIDE AFTER 3 SEC */
-setTimeout(()=>{
-  document.querySelector(".intro").style.opacity="0";
-  setTimeout(()=>{
-    document.querySelector(".intro").style.display="none";
-  },1000);
-},3000);
-
-
-/* SLIDER */
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-function showSlide(){
-  slides.forEach(s=>s.classList.remove("active"));
-  slides[index].classList.add("active");
-
-  index++;
-  if(index>=slides.length) index=0;
-}
-
-setInterval(showSlide,3000);
-
-</script>
-
-</body>
-</html>
