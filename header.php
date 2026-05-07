@@ -14,9 +14,15 @@
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="container navbar-container">
+            <?php
+                $logoPath = file_exists(__DIR__ . '/images/logo.png') ? 'images/logo.png' : 'images/logo.jpeg';
+            ?>
             <a href="home.php" class="navbar-logo">
-                <img src="images/logo.jpeg" alt="Reya's Logo" style="position: absolute; width: 50px; left: 20px; height: 50px;">
-                <span class="logo-text">REYA'S</span>
+                <img src="<?php echo $logoPath; ?>" alt="Reya's Logo">
+                <span class="logo-text">
+                    <strong>REYA'S</strong>
+                    <small>Beauty Lounge</small>
+                </span>
             </a>
 
             <div class="hamburger" id="hamburger">

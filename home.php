@@ -34,6 +34,10 @@ if (empty($banners)) {
         <?php endforeach; ?>
     </div>
     <?php if (count($banners) > 1): ?>
+        <div class="slider-arrows">
+            <button class="slider-arrow prev" type="button"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-arrow next" type="button"><i class="fas fa-chevron-right"></i></button>
+        </div>
         <div class="slider-controls">
             <?php foreach ($banners as $index => $banner): ?>
                 <button class="slider-control<?php echo $index === 0 ? ' active' : ''; ?>" data-slide="<?php echo $index; ?>"></button>
@@ -84,15 +88,22 @@ if (empty($banners)) {
 <script>
     const controls = document.querySelectorAll('.slider-control');
     const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.slider-arrow.prev');
+    const nextButton = document.querySelector('.slider-arrow.next');
     let currentSlide = 0;
 
     function setSlide(index) {
+        if (!slides.length) return;
         const slidesWrapper = document.querySelector('.slides');
-        slidesWrapper.style.transform = `translateX(-${index * 100}%)`;
+        currentSlide = (index + slides.length) % slides.length;
+        slidesWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
         controls.forEach((button, btnIndex) => {
-            button.classList.toggle('active', btnIndex === index);
+            button.classList.toggle('active', btnIndex === currentSlide);
         });
-        currentSlide = index;
+    }
+
+    if (slides.length) {
+        setSlide(0);
     }
 
     controls.forEach((button) => {
@@ -101,10 +112,21 @@ if (empty($banners)) {
         });
     });
 
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            setSlide(currentSlide - 1);
+        });
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            setSlide(currentSlide + 1);
+        });
+    }
+
     if (slides.length > 1) {
         setInterval(() => {
-            const nextSlide = (currentSlide + 1) % slides.length;
-            setSlide(nextSlide);
+            setSlide(currentSlide + 1);
         }, 7000);
     }
 </script>

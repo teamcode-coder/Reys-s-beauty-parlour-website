@@ -29,35 +29,7 @@
                 </div>
             </div>
             <div class="about-image">
-                <img src="images/beuty parlour.png" alt="Reya's Beauty Lounge Interior">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- TEAM PREVIEW -->
-<section style="padding: 100px 0; background: rgba(255,255,255,0.06);">
-    <div class="container">
-        <div class="section-header">
-            <h2>Meet Our Experts</h2>
-            <p>Dedicated professionals committed to your beauty journey.</p>
-        </div>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div style="width: 120px; height: 120px; background: rgba(255,255,255,0.12); border-radius: 50%; margin: 0 auto 20px;"></div>
-                <h3>Reya Sharma</h3>
-                <p style="color: var(--primary); font-weight: 500;">Founder & Lead Stylist</p>
-            </div>
-            <div class="feature-card">
-                <div style="width: 120px; height: 120px; background: #eee; border-radius: 50%; margin: 0 auto 20px;"></div>
-                <h3>Ananya Rao</h3>
-                <p style="color: var(--primary); font-weight: 500;">Skin Care Specialist</p>
-            </div>
-            <div class="feature-card">
-                <div style="width: 120px; height: 120px; background: #eee; border-radius: 50%; margin: 0 auto 20px;"></div>
-                <h3>Priya K.</h3>
-                <p style="color: var(--primary); font-weight: 500;">Makeup Artist</p>
+                <img src="images\Reya.png" alt="Reya's Beauty Lounge Interior">
             </div>
         </div>
     </div>

@@ -125,20 +125,35 @@ img {
 .navbar-logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     margin-right: auto;
 }
 
 .navbar-logo img {
-    height: 45px;
+    height: 48px;
     width: auto;
+    position: relative;
 }
 
 .logo-text {
-    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     color: var(--accent);
-    letter-spacing: 1.2px;
     font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1.1;
+}
+
+.logo-text strong {
+    font-size: 1.35rem;
+}
+
+.logo-text small {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.72);
+    letter-spacing: 0.6px;
 }
 
 .nav-links {
@@ -183,14 +198,41 @@ img {
 }
 
 .slide {
+    flex: 0 0 100%;
     min-height: 75vh;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     background-size: cover;
     background-position: center;
+}
+
+.slider-arrows {
+    position: absolute;
+    inset: auto 20px 40px auto;
+    display: flex;
+    gap: 16px;
+    z-index: 3;
+}
+
+.slider-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(16, 8, 50, 0.84);
+    border: 1px solid rgba(255,255,255,0.16);
+    color: var(--white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.slider-arrow:hover {
+    background: rgba(139,92,246,0.92);
+    transform: scale(1.05);
 }
 
 .slide::before {
@@ -352,7 +394,8 @@ img {
 /* FEATURES / WHY CHOOSE US */
 .features {
     padding: 100px 0;
-    background: var(--white);
+    background: linear-gradient(180deg, rgba(17, 10, 42, 0.96), rgba(16, 8, 50, 0.98));
+    color: var(--white);
 }
 
 .features-grid {
