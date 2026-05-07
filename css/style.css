@@ -116,14 +116,16 @@ img {
 
 .navbar-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
 }
 
 .navbar-logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-right: auto;
 }
 
 .navbar-logo img {
@@ -141,6 +143,7 @@ img {
     display: flex;
     gap: 30px;
     align-items: center;
+    margin-left: auto;
 }
 
 .nav-link {
@@ -168,17 +171,15 @@ img {
 
 /* HERO SECTION */
 .hero {
-    height: 100vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/hero_premium.png');
-    background-size: cover;
-    background-position: center;
+    background: url('../images/hero_premium.png') center center / cover no-repeat;
     color: var(--white);
-    padding-top: 80px;
+    padding: 120px 0 80px;
 }
 
 .hero-content {
@@ -455,6 +456,43 @@ input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(181, 131, 141, 0.1);
+}
+
+/* AUTH / LOGIN FORM HELPERS */
+.auth-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.auth-form label {
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"],
+.auth-form input[type="email"] {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 50px;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
 /* FOOTER */

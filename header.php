@@ -15,7 +15,7 @@
     <nav class="navbar">
         <div class="container navbar-container">
             <a href="home.php" class="navbar-logo">
-                <img src="images/logo.jpeg" alt="Reya's Logo">
+                <img src="images/logo.jpeg" alt="Reya's Logo" style="position: absolute; width: 50px; left: 20px; height: 50px;">
                 <span class="logo-text">REYA'S</span>
             </a>
 
