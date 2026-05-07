@@ -8,14 +8,6 @@
 </head>
 <body>
     <div class="admin-page">
-        <header class="admin-brand">
-            <a href="../home.php" class="brand-link">
-                <img src="../images/logo.jpeg" alt="Reya's Logo">
-                <div>
-                    <span class="brand-title">Reya's Beauty Lounge</span>
-                </div>
-            </a>
-        </header>
 
         <main class="login-wrapper">
             <div class="login-card">

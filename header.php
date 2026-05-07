@@ -28,7 +28,8 @@
                 <li><a href="about.php" class="nav-link">About</a></li>
                 <li><a href="service.php" class="nav-link">Services</a></li>
                 <li><a href="package.php" class="nav-link">Packages</a></li>
-                <li><a href="booking.php" class="nav-link nav-cta">Book Now</a></li>
+                <li><a href="gallery.php" class="nav-link">Gallery</a></li>
+                <li><a href="https://wa.me/919842048388?text=Hello%20Reya%2C%20I%20would%20like%20to%20book%20a%20service" class="nav-link nav-cta" target="_blank">Book Now</a></li>
             </ul>
         </div>
     </nav>

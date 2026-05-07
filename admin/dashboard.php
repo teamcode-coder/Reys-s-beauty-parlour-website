@@ -1,3 +1,10 @@
+<?php
+require_once '../db.php';
+$bannerCount = queryOne('SELECT COUNT(*) AS total FROM banners')['total'] ?? 0;
+$galleryCount = queryOne('SELECT COUNT(*) AS total FROM gallery')['total'] ?? 0;
+$packageCount = queryOne('SELECT COUNT(*) AS total FROM packages')['total'] ?? 0;
+$serviceCount = queryOne('SELECT COUNT(*) AS total FROM services')['total'] ?? 0;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,39 +27,39 @@
         <section class="overview-grid">
             <article class="stat-card">
                 <span class="stat-label">TOTAL BANNERS</span>
-                <strong>3</strong>
+                <strong><?php echo $bannerCount; ?></strong>
             </article>
             <article class="stat-card">
                 <span class="stat-label">GALLERY ITEMS</span>
-                <strong>3</strong>
+                <strong><?php echo $galleryCount; ?></strong>
             </article>
             <article class="stat-card">
                 <span class="stat-label">PACKAGES</span>
-                <strong>8</strong>
+                <strong><?php echo $packageCount; ?></strong>
             </article>
             <article class="stat-card">
                 <span class="stat-label">SERVICES</span>
-                <strong>3</strong>
+                <strong><?php echo $serviceCount; ?></strong>
             </article>
         </section>
 
         <section class="manage-grid">
-            <article class="manage-card">
+            <a href="manage_banner.php" class="manage-card">
                 <h2>Manage Banners</h2>
                 <p>Edit homepage slides and banner text.</p>
-            </article>
-            <article class="manage-card">
+            </a>
+            <a href="manage_gallery.php" class="manage-card">
                 <h2>Manage Gallery</h2>
                 <p>Add, edit, or remove gallery images and videos.</p>
-            </article>
-            <article class="manage-card">
+            </a>
+            <a href="manage_packages.php" class="manage-card">
                 <h2>Manage Packages</h2>
                 <p>Update package details and pricing.</p>
-            </article>
-            <article class="manage-card">
+            </a>
+            <a href="manage_services.php" class="manage-card">
                 <h2>Manage Services</h2>
                 <p>Manage service descriptions and feature lists.</p>
-            </article>
+            </a>
         </section>
     </div>
 </body>

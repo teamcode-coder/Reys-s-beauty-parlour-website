@@ -1,15 +1,45 @@
-<?php include('header.php'); ?>
+<?php
+include('header.php');
+include('db.php');
+$banners = queryAll('SELECT * FROM banners ORDER BY id DESC');
+if (empty($banners)) {
+    $banners = [
+        [
+            'id' => 0,
+            'title' => 'Reveal Your Natural Radiance',
+            'subtitle' => 'Premium beauty treatments and wellness services tailored for your unique glow. Experience luxury at Reya\'s Beauty Lounge.',
+            'button_text' => 'Book Appointment',
+            'button_url' => 'https://wa.me/919842048388?text=Hello%20Reya,%20I%20would%20like%20to%20book%20a%20service',
+            'image_url' => 'images/hero_premium.png'
+        ]
+    ];
+}
+?>
 
 <!-- HERO -->
 <section class="hero">
-    <div class="hero-content">
-        <h1>Reveal Your Natural Radiance</h1>
-        <p>Premium beauty treatments and wellness services tailored for your unique glow. Experience luxury at Reya's Beauty Lounge.</p>
-        <div class="cta-buttons">
-            <a href="booking.php" class="btn btn-primary">Book Appointment</a>
-            <a href="service.php" class="btn btn-outline">Explore Services</a>
-        </div>
+    <div class="slides">
+        <?php foreach ($banners as $banner): ?>
+            <div class="slide" style="background-image: url('<?php echo htmlspecialchars($banner['image_url']); ?>');">
+                <div class="slide-inner">
+                    <span class="hero-badge">Premium Experience</span>
+                    <h1><?php echo htmlspecialchars($banner['title']); ?></h1>
+                    <p><?php echo htmlspecialchars($banner['subtitle']); ?></p>
+                    <div class="cta-buttons">
+                        <a href="<?php echo htmlspecialchars($banner['button_url']); ?>" class="btn btn-primary" target="_blank"><?php echo htmlspecialchars($banner['button_text']); ?></a>
+                        <a href="service.php" class="btn btn-outline">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
+    <?php if (count($banners) > 1): ?>
+        <div class="slider-controls">
+            <?php foreach ($banners as $index => $banner): ?>
+                <button class="slider-control<?php echo $index === 0 ? ' active' : ''; ?>" data-slide="<?php echo $index; ?>"></button>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
 </section>
 
 <!-- WHY CHOOSE US -->
@@ -43,12 +73,40 @@
 </section>
 
 <!-- CALL TO ACTION -->
-<section style="padding: 100px 0; background-color: var(--accent); color: var(--text-dark); text-align: center;">
+<section style="padding: 100px 0; background: rgba(139,92,246,0.12); color: var(--text-dark); text-align: center;">
     <div class="container">
         <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready for a Transformation?</h2>
         <p style="font-size: 1.1rem; margin-bottom: 30px;">Step into a world of beauty and relaxation today.</p>
-        <a href="booking.php" class="btn btn-primary">Make an Appointment</a>
+        <a href="https://wa.me/919842048388?text=Hello%20Reya,%20I%20would%20like%20to%20book%20a%20service" class="btn btn-primary" target="_blank">Make an Appointment</a>
     </div>
 </section>
+
+<script>
+    const controls = document.querySelectorAll('.slider-control');
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function setSlide(index) {
+        const slidesWrapper = document.querySelector('.slides');
+        slidesWrapper.style.transform = `translateX(-${index * 100}%)`;
+        controls.forEach((button, btnIndex) => {
+            button.classList.toggle('active', btnIndex === index);
+        });
+        currentSlide = index;
+    }
+
+    controls.forEach((button) => {
+        button.addEventListener('click', () => {
+            setSlide(parseInt(button.dataset.slide, 10));
+        });
+    });
+
+    if (slides.length > 1) {
+        setInterval(() => {
+            const nextSlide = (currentSlide + 1) % slides.length;
+            setSlide(nextSlide);
+        }, 7000);
+    }
+</script>
 
 <?php include('footer.php'); ?>

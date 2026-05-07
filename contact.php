@@ -3,13 +3,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!-- CONTACT SECTION -->
-<section style="padding: 60px 20px; background: white;">
+<section style="padding: 60px 20px; background: rgba(255,255,255,0.06);">
     <div style="max-width: 1200px; margin: 0 auto;">
         <h2 class="section-title" style="margin-bottom: 60px;">Get In Touch With Us</h2>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px;">
             <!-- CONTACT INFO CARDS -->
-            <div style="padding: 30px; background: #f8f9fa; border-radius: 15px; text-align: center;">
+            <div style="padding: 30px; background: rgba(255,255,255,0.1); border-radius: 15px; text-align: center;">
                 <div style="font-size: 40px; color: #ff69b4; margin-bottom: 15px;">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
@@ -25,8 +25,8 @@
                 <p style="color: #666;"><a href="tel:9842048388" style="color: #ff69b4; text-decoration: none;">9842048388</a></p>
             </div>
 
-            <div style="padding: 30px; background: #f8f9fa; border-radius: 15px; text-align: center;">
-                <div style="font-size: 40px; color: #ff69b4; margin-bottom: 15px;">
+            <div style="padding: 30px; background: rgba(255,255,255,0.1); border-radius: 15px; text-align: center;">
+                <div style="font-size: 40px; color: var(--accent); margin-bottom: 15px;">
                     <i class="fas fa-clock"></i>
                 </div>
                 <h3 style="color: #1a1a1a; margin-bottom: 10px;">Hours</h3>
@@ -39,7 +39,7 @@
             <!-- CONTACT FORM -->
             <div>
                 <h3 style="color: #1a1a1a; margin-bottom: 25px; font-size: 24px;">Send us a Message</h3>
-                <form onsubmit="sendMsg(); return false;" style="background: #f8f9fa; padding: 30px; border-radius: 15px;">
+                <form onsubmit="sendMsg(); return false;" style="background: rgba(255,255,255,0.08); padding: 30px; border-radius: 15px;">
                     <div style="margin-bottom: 20px;">
                         <input type="text" id="name" placeholder="Your Name" required 
                             style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 15px;">
