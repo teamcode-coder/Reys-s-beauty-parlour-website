@@ -461,6 +461,7 @@ img {
     background-color: #eee;
     position: relative;
     overflow: hidden;
+    object-fit: cover;
 }
 
 .card-img img {
