@@ -62,7 +62,7 @@ if (empty($banners)) {
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-sparkles"></i></div>
+                <div class="feature-icon"><i class="fas fa-award"></i></div>
                 <h3>Premium Products</h3>
                 <p>We exclusively use high-end, skin-friendly products for all our treatments.</p>
             </div>

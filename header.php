@@ -15,10 +15,17 @@
     <nav class="navbar">
         <div class="container navbar-container">
             <?php
-                $logoPath = file_exists(__DIR__ . '/images/logo.png') ? 'images/logo.png' : 'images/logo.jpeg';
+                if (file_exists(__DIR__ . '/images/logo.png')) {
+                    $logoPath = 'images/logo.png';
+                } elseif (file_exists(__DIR__ . '/images/reya logo.png')) {
+                    $logoPath = 'images/reya logo.png';
+                } else {
+                    $logoPath = 'images/logo.jpeg';
+                }
+                $logoUrl = str_replace(' ', '%20', $logoPath);
             ?>
             <a href="home.php" class="navbar-logo">
-                <img src="<?php echo $logoPath; ?>" alt="Reya's Logo">
+                <img src="<?php echo htmlspecialchars($logoUrl); ?>" alt="Reya's Logo">
                 <span class="logo-text">
                     <strong>REYA'S</strong>
                     <small>Beauty Lounge</small>
